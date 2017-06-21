@@ -1,0 +1,160 @@
+<! DOCTYPE html>
+<html lang=zh-cmn-Hans>
+
+    <head>
+	      <title>计分器</title>
+		  <meta name='description' content="这是打球时用的计分器"/>
+		  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		  <style type = "text/css">
+		  header{
+             display:block;
+			 padding: 0px 0px 10px 0px;
+			 text-align: center;
+		  }
+		  h1{
+		  	margin: 10px;
+		  	margin-left: 0px;
+		  	padding: 5px 0px 0px 10px;
+		  	color: navy;
+		  	text-shadow: 2px 2px 3px gray;
+		  }
+		  #logo{
+		  	margin-right: 5px;
+		  	float: left;
+		  	position: relative;
+		  }
+		  body{
+		  	background: #5D8AA8;
+		  	padding: 0;
+		  	margin: 0;
+		  	text-align: center;
+		  }
+		  #wrapper{
+		     margin:20px;
+		     background:white;
+		     height:99%;
+		     font-size: 1.6em;
+		     background-position: center center;
+		  }
+		  #Bluescore{
+		  	color: white;
+		    margin: 10px;
+		    font-size: 50px;
+		    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+		    padding: 25px 70px 25px 70px;
+		    background-color:blue;
+		    border: 1px solid blue;}
+		  #Ok{
+		    margin: 50px;
+		    font-size: 50px;
+		    font-style: italic;
+		    color: orange;}
+		  #Redscore{
+		  	color: white;
+		    margin: 10px;
+		    font-size: 50px;
+		    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+		    padding: 25px 70px 25px 70px;
+		    background-color:red;
+		    border: 1px solid red;}
+		  button{
+		  	padding: 10px 30px 10px 30px;
+		  	margin: 100px;
+		  	margin-bottom: 50px;
+		  	margin-top: 50px;
+		  	font-family: Andale Mono;
+		  }
+		  a:visited{color: #989898;}
+		  #moji{
+		  display: block;
+		  background: orange;
+		  font-size: 30px;
+		  border: 3px dotted navy;
+		  margin-top: 5px;
+		  margin-bottom: 50px;
+		  }
+		  #circle{
+		  height: 100px;
+		  width: 150px;
+		  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+		  background-color: orange;
+		  border: 3px solid black;
+		  border-radius: 100%;
+		  display: inline-block;
+		  padding: 30px 0px 8px 0px;
+          font-weight: bold;
+          font-size: 45px;
+          color: white;
+		  }
+		  </style>
+		  
+	      <script>
+	      var index = 0
+	      var index2 = 0
+		  function init(){
+		     var buttontags = document.getElementsByTagName('button');
+			 buttontags[0].onclick = SetBlueScore;
+			 buttontags[1].onclick = SetRedScore;
+			 var divtag = document.getElementById('circle');
+			 divtag[0].onclick = Resetgame;
+		  }
+		  function SetBlueScore(){
+		  	 index++;
+		     document.getElementById('Bluescore').innerHTML = index;
+		  }
+		  function SetRedScore(){
+		  	 index2++;
+		     document.getElementById('Redscore').innerHTML = index2;
+		  }
+		  function Resetgame(){
+		  	index = 0;
+		  	index2 = 0;
+		  	document.getElementById('Bluescore').innerHTML = index;
+		  	document.getElementById('Redscore').innerHTML = index2;
+		  }
+		  onload = init;
+
+		  </script>
+	</head>
+	
+	<body>
+	    <div id="wrapper">
+	      <header>
+	         <img id = "logo" src="http://img.zcool.cn/community/01b5a5580b60fca84a0d304f435ce4.gif" alt="pingpong" height=15% width=20%/>
+	         <h1>Ping Pong Scoreboard</h1>
+	      </header>
+	      <nav>
+		     <pre id ="moji">('.') (*.*) ('.') (*.*) ('.') ('.') (*.*) ('.') (*.*) ('.')</pre>
+		  </nav>
+	      <main id="content">
+	      <section>
+	      	<script>
+	      	var Bscore = 0；
+	      	var Rscore = 0；
+	      	</script>
+	         <span id = "Bluescore">0</span>
+	         <span id = "Ok">VS</span>
+	         <span id = "Redscore">0</span>
+	      </section>
+	      <section>
+	         <button>蓝队得分</button>
+	         <button >红队得分</button><br />
+	         <div id="circle" onClick="Resetgame()">Game</div>
+	      </section>
+		  <!-- <section>
+	         <a href="http://www.baidu.com">乒林秘籍</a>
+	         <form>
+	            <b>垃圾话区</b><br />
+		        <input type='text' name='talk' size=100><br />
+		     <textarea cols=40 rows=10 name="message">给对手的话</textarea><br />
+			 <input type="submit" name="submit" value="Submit">
+			 <input type="reset" value="Reset">
+	         </form>
+		  </section> -->
+		  </main>
+		  <footer></footer>
+	    </div>
+	
+	</body>
+
+</html>
